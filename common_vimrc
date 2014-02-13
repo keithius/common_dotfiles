@@ -56,7 +56,7 @@ endtry
 " add an underline for the line that the cursor is on
 set cursorline
 "hi CursorLine term=bold cterm=bold guibg=Grey30
-hi CursorLine cterm=NONE ctermbg=darkred ctermfg=NONE
+hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
 
 " minibufferexplorer
 try

@@ -7,8 +7,10 @@ syntax on
 set autoindent
 set smartindent
 set mouse=a
-map <ScrollWheelUp> k
-map <ScrollWheelDown> j
+"map <ScrollWheelUp> k
+"map <ScrollWheelDown> j
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
 
 " NERDTree, if it exists
 try
@@ -49,11 +51,12 @@ catch
 endtry
 
 " make the cursor stay in the middle
-set so=999
+"set so=999
 
 " add an underline for the line that the cursor is on
 set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey30
+"hi CursorLine term=bold cterm=bold guibg=Grey30
+hi CursorLine cterm=NONE ctermbg=darkred ctermfg=NONE
 
 " minibufferexplorer
 try

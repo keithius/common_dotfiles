@@ -36,7 +36,7 @@ PS1='\[\e[0;33m\]\u@\h\[\e[m\] \[\e[0;34m\]\w \$\[\e[m\] '
 if hash ranger 2>/dev/null; then
 	function ranger-cd {
 		tempfile='/tmp/chosendir'
-		/usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+		ranger --choosedir="$tempfile" "${@:-$(pwd)}"
 		test -f "$tempfile" &&
 		if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
 			cd -- "$(cat "$tempfile")"
@@ -50,11 +50,15 @@ else
 	echo "Can not find ranger"
 fi
 
+
+# Start tmux if it is not only running. Start only one instance. Reattach if possible. Hopefulle this works
 if hash tmux 2>/dev/null; then
-# Start tmux if it is not only running. Start only one instance. Reattach if possible
-	if which tmux 2>&1 >/dev/null; then
-		#if not inside a tmux session, and if no session is started, start a new session
-		test -z "$TMUX" && (tmux attach || tmux new-session)
+	if [[ $- == *i* ]]
+	then
+			if which tmux 2>&1 >/dev/null; then
+				#if not inside a tmux session, and if no session is started, start a new session
+				test -z "$TMUX" && (tmux attach || tmux new-session)
+			fi
 	fi
 else
 	echo "Can not find tmux"

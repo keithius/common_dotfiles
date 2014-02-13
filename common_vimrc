@@ -1,0 +1,62 @@
+" some general stuff
+filetype on
+filetype plugin indent on
+set nocompatible
+set number
+syntax on
+set autoindent
+set smartindent
+set mouse=a
+map <ScrollWheelUp> k
+map <ScrollWheelDown> j
+
+" NERDTree, if it exists
+try
+	silent! nmap <F2> :NERDTreeToggle<CR>
+catch
+endtry
+
+" Latex (only load if it can find these)
+try
+	au FileType tex setlocal spell spelllang=en_us
+	let g:tex_flavor='latex'
+	nmap <F8> :w<CR><leader>ll<leader>lv
+	let g:Tex_DefaultTargetFormat='pdf'
+	let g:Tex_MultipleCompileFormats='dvi,pdf'
+	let g:Tex_ViewRule_pdf='evince'
+	let Tex_FoldedSections=""
+	let Tex_FoldedEnvironments=""
+	let Tex_FoldedMisc=""
+	let g:Tex_HotKeyMappings='eqnarray*,eqnarray,bmatrix'
+catch
+endtry
+
+" map hjkl to move window
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
+
+" Clang complete options
+try
+	let g:clang_user_options='|| exit 0'
+	let g:clang_complete_auto = 1
+	let g:clang_complete_copen = 1
+	let g:clang_library_path = "/usr/lib/"
+	nmap <C-P> :clang_close-preview<CR>
+catch
+endtry
+
+" make the cursor stay in the middle
+set so=999
+
+" add an underline for the line that the cursor is on
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey30
+
+" minibufferexplorer
+try
+	let g:miniBufExplModSelTarget = 1
+catch
+endtry

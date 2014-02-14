@@ -9,8 +9,8 @@ set smartindent
 set mouse=a
 "map <ScrollWheelUp> k
 "map <ScrollWheelDown> j
-map <ScrollWheelUp> <C-Y>
-map <ScrollWheelDown> <C-E>
+map <ScrollWheelUp> 3<C-Y>
+map <ScrollWheelDown> 3<C-E>
 
 " NERDTree, if it exists
 try
@@ -50,12 +50,8 @@ try
 catch
 endtry
 
-" make the cursor stay in the middle
-"set so=999
-
 " add an underline for the line that the cursor is on
 set cursorline
-"hi CursorLine term=bold cterm=bold guibg=Grey30
 hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
 
 " minibufferexplorer

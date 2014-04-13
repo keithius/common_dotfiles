@@ -7,6 +7,7 @@ syntax on
 set autoindent
 set smartindent
 set mouse=a
+
 "map <ScrollWheelUp> k
 "map <ScrollWheelDown> j
 map <ScrollWheelUp> 3<C-Y>
@@ -59,3 +60,5 @@ try
 	let g:miniBufExplModSelTarget = 1
 catch
 endtry
+
+

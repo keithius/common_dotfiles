@@ -19,6 +19,9 @@ try
 catch
 endtry
 
+" Toggle numbers
+nnoremap <F3> :set nonumber!<CR>
+
 " Latex (only load if it can find these)
 try
 	au FileType tex setlocal spell spelllang=en_us

@@ -69,11 +69,22 @@ else
 fi
 	
 # Some aliases for some common things
-alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias grep='grep --color=tty -d skip'
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias np='nano PKGBUILD'
+if ! ls --group-directories-first 1>/dev/null 2>&1; then
+	alias ls='ls --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+	alias ll='ls -l --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+	alias la='ls -la --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+	alias grep='grep --color=tty -d skip'
+	alias cp="cp -i"                          # confirm before overwriting something
+	alias df='df -h'                          # human-readable sizes
+	alias free='free -m'                      # show sizes in MB
+	alias np='nano PKGBUILD'
+else
+	alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+	alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+	alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+	alias grep='grep --color=tty -d skip'
+	alias cp="cp -i"                          # confirm before overwriting something
+	alias df='df -h'                          # human-readable sizes
+	alias free='free -m'                      # show sizes in MB
+	alias np='nano PKGBUILD'
+fi

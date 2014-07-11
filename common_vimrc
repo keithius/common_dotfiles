@@ -49,6 +49,8 @@ filetype plugin indent on    " required
 
 " some general stuff
 
+"set txx to have cpp highlighting
+au BufNewFile,BufRead *.txx set filetype=cpp
 
 set number
 syntax on

@@ -20,6 +20,7 @@ Plugin 'fholgado/minibufexpl.vim'
 "
 Plugin 'Valloric/YouCompleteMe'
 "
+Plugin 'scrooloose/nerdcommenter'
 " " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " " Git plugin not hosted on GitHub
